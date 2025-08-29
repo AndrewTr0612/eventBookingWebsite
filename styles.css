@@ -1,0 +1,729 @@
+/*** VSCodeEDU preview fix 
+
+  Purpose:
+  - Fix VSCodeEDU issue that causes a white border to show around
+    the preview window
+
+  When To Modify:
+  - If you change the background color of your webpage, you may need to update this rule too.
+***/
+
+
+/*** body ***
+  
+  Purpose:
+  - Add style rules for the body of your webpage
+  - This is useful if you want a rule to apply to EVERYTHING on your page
+    - (Tip: You can always override these rules later in the stylesheet)
+
+  When To Modify:
+  - [ ] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+/*** VSCodeEDU preview fix ***/
+
+/*** VSCodeEDU preview fix ***/
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('/img/galaxy background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* space for fixed navbar */
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--accent-color-darkest);
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* optional shadow */
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 4px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.navbar a:hover {
+  background-color: var(--accent-color-dark);
+  transform: scale(1.05);
+}
+
+.navbar .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  gap: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-content .header-button {
+  background-color: var(--accent-color-green);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 18px;
+  margin: 0;
+  width: auto;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.dropdown-content .header-button-group {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Two‑column parent */
+.two-column-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.content-container-left,
+.content-container-right {
+  width: 460px;
+}
+
+
+/* LEFT column (your original content) */
+.content-container-left {
+  background-color: white;
+  flex: 1 1 0;            /* allow to grow and shrink */
+  min-width: 300px;       /* prevent too narrow on small screens */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding-bottom: 80px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* RIGHT column (new) */
+.content-container-right {
+  background-color: white;
+  flex: 1 1 0;
+  min-width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  padding-bottom: 80px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.about-bottom-section {
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 800px;
+  text-align: center;
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  background-color: #D2CFF5;
+  font-family: 'Poppins', monospace;
+  font-size: 48px;
+  color: #231942;
+  text-align: center;
+  padding: 20px;
+}
+
+h2 {
+  font-family: 'Poppins', 'Georgia', serif;
+  color: black;
+  margin-bottom: 15px;
+  animation: bounceIn 1s ease;
+}
+
+h3 {
+  color: blue;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: underline;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+h4 {
+  font-style: italic;
+  color: #231942;
+  margin-top: 10px;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 20px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+a,
+a * {
+  color: #28eb76;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+a:hover {
+  color: #231942;
+  text-decoration: underline;
+}
+
+
+/*** RSVP Section ***
+  
+  Purpose:
+  - Add style rules for your website's RSVP form
+
+  When To Modify:
+  - [ ] Project 6 (REQUIRED FEATURE)
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.error {
+  border: 2px solid red;
+  background-color: #ffe6e6; /* Light red/pink background */
+
+  /* Set border-color and background */
+}
+/* RSVP Box Container */
+.rsvp-container {
+border: 2px solid #3498db;              /* blue border */
+  border-radius: 8px;
+  background-color: #e6f2fb; 
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Flex styling for form */
+.rsvp-container form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* Form label styles */
+.rsvp-container label {
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Input field styles */
+.rsvp-container input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Button style */
+.rsvp-container button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* Add other rsvp-related selectors here */
+.dark-mode .rsvp-container {
+  background-color: #1e1e2f;       /* Dark neutral background */
+  border: 2px solid #4fa3ff;       /* Lighter blue border */
+  box-shadow: 0 0 12px rgba(79, 163, 255, 0.2);
+}
+
+.dark-mode .rsvp-container input {
+  background-color: #2b2b3d;
+  color: white;
+  border: 1px solid #555;
+}
+
+.dark-mode .rsvp-container label {
+  color: #f0f0f0;
+}
+
+.dark-mode .rsvp-container button {
+  background-color: #3498db;
+  color: white;
+}
+
+.dark-mode .error {
+  background-color: #662222;
+  border-color: #ff4d4d;
+}
+
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+button:hover {
+  background-color: #482f95;
+  transform: scale(1.05);
+}
+
+.important {
+  color: crimson;
+  font-weight: bold;
+  background-color: #f8bbd0;
+  padding: 5px;
+}
+
+ul {
+  list-style: square inside;
+  padding-left: 0;
+  margin-bottom: 20px;
+  color: #231942;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+#schedule {
+  border: 1px solid var(--accent-color-medium);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(21, 27, 100, 0.5); /* 0.7 is 70% opacity */
+  padding-top: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 4px solid var(--accent-color-darkest);
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+#header-left {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.title-wrapper {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.title-wrapper h1 {
+  font-size: 48px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  font-family: 'Poppins', monospace;
+}
+
+#header-right {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#header-img {
+  width: 60px;
+  max-width: 80px;
+  margin-left: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-panel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.scroll-panel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.event-card {
+  background-color: #fff;
+  flex: 0 0 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.event-card p {
+  text-align: justify;
+  margin: auto;
+}
+
+.event-card iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+}
+
+.footer {
+  position: relative;  /* instead of fixed */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--accent-color-darkest);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  z-index: 1;
+}
+
+
+.footer a {
+  color: var(--accent-color-green);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 0;
+  color: white;
+}
+
+:root {
+  --bg-color: #a6a0cf;
+  --text-color: #231942;
+  --bg-color-dark-mode: #3e3377;
+  --text-color-dark-mode: #fff;
+  --accent-color-light: #d2cff5;
+  --accent-color-medium: #684fb5;
+  --accent-color-dark: #482f95;
+  --accent-color-darkest: #231942;
+  --accent-color-green: #28eb76;
+  --error-color: #f8bbd0;
+  --error-color-border: #e63946;
+}
+
+
+/*** index.js part ***
+
+/* Default dark mode style */
+.dark-mode .content-container-left{
+  background-color: black;
+}
+
+/* Example: Different dark mode style for h1 */
+.dark-mode .event-card {
+  background-color: black;
+}
+
+/* Example: Different dark mode style for visited links */
+.dark-mode a:visited * {
+  color: blue;
+}
+
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode #about,
+.dark-mode #schedule,
+.dark-mode footer,
+.dark-mode p{
+    color: white;
+}
+
+.dark-mode #schedule{
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border: 1px solid var(--accent-color-light);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.dark-mode .content-container-left,
+.dark-mode .content-container-right {
+  background-color: #000;
+  color: #fff;
+}
+
+/*** Theme‑toggle button styling (Step 5 requirement) ***/
+#theme-button {
+  /* Elegant font */
+  font-family: 'Playfair Display', serif;
+
+  /* Refined color and underline */
+  color: var(--accent-color-light);
+
+  /* Comfortable padding for click area */
+  padding: 10px 18px;
+
+  /* Elegant border style */
+  border: 2px solid var(--accent-color-green);
+  border-radius: 6px;
+
+  /* Smooth visual transition */
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#theme-button:hover {
+  background-color: var(--accent-color-dark);
+  color: white;
+  transform: scale(1.05);
+}
+
+.dark-mode #theme-button {
+  color: var(--accent-color-light);
+  border-color: var(--accent-color-light);
+}
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
+/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Success Modal  ***
+  
+  Purpose:
+  - Add style rules to your website's pop-up modal, which appears
+    when a user successfully submits the RSVP form
+
+  When To Modify:
+  - [ ] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  max-width: 500px;
+  text-align: center;
+}
+#close-modal-button {
+  margin-top: 1rem;
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+@keyframes bobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+.modal-content img.animate {
+  animation: bobble 0.5s infinite ease-in-out;
+}
+
+#close-modal-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Base styling for the button */
+#reduce-motion-toggle {
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* State when motion is ON */
+#reduce-motion-toggle.motion-on {
+  background-color: #28a745;      /* vivid green */
+  color: white;
+}
+#reduce-motion-toggle.motion-on:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* State when motion is OFF */
+#reduce-motion-toggle.motion-off {
+  background-color: #dc3545;      /* vivid red */
+  color: white;
+}
+#reduce-motion-toggle.motion-off:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* Add a glowing outline to draw attention */
+#reduce-motion-toggle {
+  position: relative;
+}
+#reduce-motion-toggle.motion-on::after,
+#reduce-motion-toggle.motion-off::after {
+  content: '';
+  position: absolute;
+  top: -4px; bottom: -4px; left: -4px; right: -4px;
+  border-radius: 10px;
+  animation: pulse 2s infinite;
+}
+#reduce-motion-toggle.motion-on::after {
+  box-shadow: 0 0 12px rgba(40,167,69,0.7);
+}
+#reduce-motion-toggle.motion-off::after {
+  box-shadow: 0 0 12px rgba(220,53,69,0.7);
+}
+
+/* Pulse keyframes */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 0.2; transform: scale(0.9); }
+}
+
+
+/*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/

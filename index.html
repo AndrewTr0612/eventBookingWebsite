@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiscoveryTicket.com</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#schedule">Event</a>
+    <div class="dropdown">
+      <a href="#">User</a>
+      <div class="dropdown-content">
+        <div class="header-button-group">
+          <button class="header-button">Sign In</button>
+          <button class="header-button" onclick="document.getElementById('rsvp').scrollIntoView({ behavior: 'smooth' });">
+  Buy a Tickett</button>
+        </div>
+      </div>
+    </div>
+  <div><button id="theme-button">Toggle Dark Mode</button></div>
+<button id="reduce-motion-toggle" class="motion-on">Reduce Motion</button>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="header" id="home">
+    <div id="header-left">
+      <img id="header-img" src="img/Logo .png" alt="DiscoveryTicket Logo" />
+      <div class="title-wrapper">
+        <h1>DiscoveryTicket.com</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Container -->
+  <div class="two-column-container">
+      <div class="content-container-left">
+
+        <!-- Event Schedule -->
+        <section id="schedule">
+          <h2>Event Schedule</h2>
+          <div class="scroll-panel">
+
+            <!-- Event 1 -->
+            <div class="event-card">
+              <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/KyeoEqaSCUo?si=BvHoGV58peFyyZNq"
+                frameborder="0" allowfullscreen></iframe>
+              <h3>Science on Blast!</h3>
+              <p>Prepare for explosive demonstrations and mind-blowing experiments that bring science to life! "Science on Blast!" is a high-energy, interactive show designed to ignite curiosity and make learning unforgettable.</p>
+              <button class="header-button">Join Now</button>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="event-card">
+              <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/L43eYfXgFqk"
+                frameborder="0" allowfullscreen></iframe>
+              <h3>Shockwave Science</h3>
+              <p>Feel the impact of discovery with "Shockwave Science!" This thrilling live show delivers powerful demonstrations and unexpected phenomena, revealing the fascinating forces that shape our world in a dynamic and unforgettable experience.</p>
+              <button class="header-button">Join Now</button>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card">
+              <iframe width="100%" height="180"
+                src="https://www.youtube.com/embed/tZ2GZhND7s0"
+                title="Island Universe melds art and science at Stanford's Cantor Arts Center"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+              <h3>Unlocking the Universe</h3>
+              <p>Journey beyond the visible in "Unlocking the Universe." This captivating show delves into the grand mysteries of space, time, and existence, revealing the awe-inspiring scientific principles that govern our cosmos.</p>
+              <button class="header-button">Join Now</button>
+            </div>
+        </section>
+      </div>
+      <div class="content-container-right">
+      <!-- Right‑side content goes here -->
+        <!-- rsvp
+
+          Purpose:
+          - Section for users to sign up for the event
+          - Contains a form for users to input their information, 
+          and a list of other users who have signed up
+
+          When To Modify:
+          - [ ] Project 6 (REQUIRED FEATURE) 
+          - [ ] Project 6 (STRETCH FEATURE) 
+          - [ ] Any time after
+          --> 
+        <div id="rsvp">
+            <h2>RSVP NOW!</h2>
+            <div class="rsvp-container">
+                <div class="rsvp-para">
+                    <!-- info goes here -->
+                    We're so excited to welcome you to DiscorveryTicket exhibitions! To help us make this a truly special experience for everyone, please RSVP by August 10 2025 using the form below. Your timely response helps us finalize important details like catering, seating, and special accommodations, ensuring a seamless and enjoyable event for all. We can't wait to see you there!
+                </div>
+                <div class="rsvp-participants">
+                    <p>🎟️ Cristiano Ronaldo is coming to the exhibition.</p>
+                    <p>🎟️ Lionel Messi is coming to the exhibition.</p>
+                    <p>🎟️ Kylian Mbappé, is coming to the exhibition.</p>
+                    <div id="participants">
+                    <!-- RSVPs go here -->
+                    </div>
+                    <p id="rsvp-count"> ⭐ 3 people have RSVP'd to this event!</p>
+                </div>
+            </div>
+
+            <!--- Sign RSVP Form --->
+            <div class="form-container" >
+                <form id="rsvp-form" title="rsvp-form">
+                  <div id="rsvp-para">
+                    <!-- form inputs go here -->
+                  <!-- full name -->
+                  <label for="full-name">Full Name:</label>
+                  <input type="text" id="full-name" name="full-name" required>
+
+                  <!-- Email Address -->
+                  <label for="email">Email:</label>
+                  <input type="text" id="email" name="email" required>
+
+                  <!-- Number of guests -->
+                  <label for="guests">Number of Guests:</label>
+                  <input type="number" id="guests" min="1" max ="10" required>
+                  <!-- Submit button -->
+                  <button id="rsvp-button" type="button">Submit RSVP</button>
+                 </div> 
+                </form>
+            </div>      
+        </div>
+  </div>
+  </div>
+</div>
+<!-- About Section -->
+<section id="about" class="about-bottom-section">
+  <h2>About DiscoveryTicket.com</h2>
+  <p>DiscoveryTicket is your gateway to immersive exhibitions that spark imagination and curiosity. Our mission is to connect audiences with world-class experiences in science, art, and culture through curated virtual and in-person events. Whether you're exploring the cosmos or uncovering ancient history, DiscoveryTicket makes it simple to discover, learn, and be inspired.</p>
+</section>
+<!-- success modal
+
+Purpose:
+- Modal that appears when a user successfully signs up for the event
+- Contains a personalized message and image
+
+When To Modify:
+- [ ] Project 9 (REQUIRED FEATURE)
+- [ ] Project 9 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+
+<!-- Success Modal (should not be nested) -->
+<div id="thanks-modal" class="modal">
+  <div class="modal-content" id="thanks-modal-content">
+    <img src="/VSCode Edu/img/Astronaut (1).png" alt="Astronaut">
+    <p></p> <!-- This gets updated dynamically -->
+    <button id="close-modal-button" class="modal-close">Close</button>
+  </div>
+</div>
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+    <p>&copy; 2025 DiscoveryTicket. All rights reserved.</p>
+  </footer>
+<script src="index.js"></script>
+
+</body>
+</html>
